@@ -1,0 +1,397 @@
+{
+  "id": "4d0dd983-b421-4be1-a752-026ac08a3f2c",
+  "version": "2.0",
+  "name": "TestSelenium",
+  "url": "https://staging.fpt.vn/shop",
+  "tests": [{
+    "id": "f06882ef-e7d7-4db4-8ac1-8936a0bb153f",
+    "name": "if",
+    "commands": [{
+      "id": "e48ce9c7-db15-4b7e-98c0-e8a25ba285ef",
+      "comment": "",
+      "command": "open",
+      "target": "https://staging.fpt.vn/shop",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f6c9c9df-c9df-46a5-978a-043b9fe5a418",
+      "comment": "",
+      "command": "storeTitle",
+      "target": "",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "8fa17ad6-bfbb-4523-8aca-80d1f2e392ed",
+      "comment": "",
+      "command": "if",
+      "target": "${x} === \"Error 505\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7eac2965-a331-46ca-92e1-b9bcd2ff81af",
+      "comment": "",
+      "command": "echo",
+      "target": "Fail",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "02e2d68f-d8d3-468f-bc33-fc1be8845f14",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "758b7ba3-3c37-4ff2-a20c-be42bf11fd59",
+      "comment": "",
+      "command": "echo",
+      "target": "Pass",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0260201-eb6a-476b-a327-58c93b00db13",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e89d609a-2df7-486e-80bc-c2bf0ba34476",
+    "name": "store",
+    "commands": [{
+      "id": "20b342de-8937-4504-bb9f-aa3091c9f5c4",
+      "comment": "",
+      "command": "open",
+      "target": "https://staging.fpt.vn/shop",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c070c898-2c00-4fe9-8262-009e96547787",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return [\"092400270\", \"09240027002\", \"0924002700\"]",
+      "targets": [],
+      "value": "phone"
+    }, {
+      "id": "3139ae44-6109-466a-8088-0c8364e7ca73",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1280x732",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9016ac3f-e03c-46ad-a32b-bb858e22e961",
+      "comment": "",
+      "command": "click",
+      "target": "css=#box_internet .owl-item:nth-child(1) .btn",
+      "targets": [
+        ["css=#box_internet .owl-item:nth-child(1) .btn", "css:finder"],
+        ["xpath=(//button[@onclick='Check.choosenPackage(this)'])[5]", "xpath:attributes"],
+        ["xpath=//div[@id='box_internet']/div/div/div/div/div[10]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div/div[10]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d8c7f3c-d21d-4b04-a14e-c89477498698",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Quận 1",
+      "targets": [
+        ["linkText=Quận 1", "linkText"],
+        ["css=#districtListDesktop > .col-12:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Quận 1')])[5]", "xpath:link"],
+        ["xpath=(//a[@onclick='Check.getWard(this)'])[25]", "xpath:attributes"],
+        ["xpath=//div[@id='districtListDesktop']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:void(0)')])[152]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div[2]/div/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dfe77b3e-cd3d-43e5-9a60-82defb8a532d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Phường Bến Nghé",
+      "targets": [
+        ["linkText=Phường Bến Nghé", "linkText"],
+        ["css=#wardListDesktop > .col-12:nth-child(1) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Phường Bến Nghé')])[2]", "xpath:link"],
+        ["xpath=(//a[@onclick='Check.getStreet(this)'])[11]", "xpath:attributes"],
+        ["xpath=//div[@id='wardListDesktop']/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:void(0)')])[186]", "xpath:href"],
+        ["xpath=//div[12]/div/div/div/div[2]/div/div/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9f17255a-15de-4468-a3b2-53da58168ca4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Bùi Thị Xuân",
+      "targets": [
+        ["linkText=Bùi Thị Xuân", "linkText"],
+        ["css=#streetListDesktop > .col-12:nth-child(3) > a", "css:finder"],
+        ["xpath=(//a[contains(text(),'Bùi Thị Xuân')])[2]", "xpath:link"],
+        ["xpath=(//a[@onclick='Check.getListStreet(this)'])[77]", "xpath:attributes"],
+        ["xpath=//div[@id='streetListDesktop']/div[3]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'javascript:void(0)')])[272]", "xpath:href"],
+        ["xpath=//div[12]/div[2]/div/div/div[2]/div/div/div[3]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8103b7dd-ceba-458e-a50b-d846a6349b20",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "id=submitForm",
+      "targets": [
+        ["id=submitForm", "id"],
+        ["css=#submitForm", "css:finder"],
+        ["xpath=//button[@id='submitForm']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[15]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[15]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Tiếp tục')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f69a0d1-f2ec-43d0-b25c-81ccbce32dc8",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "id=submitForm",
+      "targets": [
+        ["id=submitForm", "id"],
+        ["css=#submitForm", "css:finder"],
+        ["xpath=//button[@id='submitForm']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[15]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[15]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Tiếp tục')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "adb62217-c415-48d2-9f9e-073e44af5b27",
+      "comment": "",
+      "command": "click",
+      "target": "id=fullname",
+      "targets": [
+        ["id=fullname", "id"],
+        ["name=fullname", "name"],
+        ["css=#fullname", "css:finder"],
+        ["xpath=//input[@id='fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[7]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "484dbf3d-c090-4aab-92a5-5a19eb8b12ff",
+      "comment": "",
+      "command": "type",
+      "target": "id=fullname",
+      "targets": [
+        ["id=fullname", "id"],
+        ["name=fullname", "name"],
+        ["css=#fullname", "css:finder"],
+        ["xpath=//input[@id='fullname']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[7]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[7]/div/div/input", "xpath:position"]
+      ],
+      "value": "NguyenNhan"
+    }, {
+      "id": "a9c1447b-9e2d-4fe8-9d2e-8c834b273d33",
+      "comment": "",
+      "command": "forEach",
+      "target": "phone",
+      "targets": [],
+      "value": "value"
+    }, {
+      "id": "af6c6872-891f-4489-bb9a-6909092ff63b",
+      "comment": "",
+      "command": "click",
+      "target": "id=phonenumber",
+      "targets": [
+        ["id=phonenumber", "id"],
+        ["name=phonenumber", "name"],
+        ["css=#phonenumber", "css:finder"],
+        ["xpath=//input[@id='phonenumber']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[8]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "070a82e8-67b9-49b2-90e1-020de4c48999",
+      "comment": "",
+      "command": "type",
+      "target": "id=phonenumber",
+      "targets": [
+        ["id=phonenumber", "id"],
+        ["name=phonenumber", "name"],
+        ["css=#phonenumber", "css:finder"],
+        ["xpath=//input[@id='phonenumber']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[8]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[8]/div/div/input", "xpath:position"]
+      ],
+      "value": "${value}"
+    }, {
+      "id": "b82fbe04-f23a-4b72-b587-6267db3c5859",
+      "comment": "",
+      "command": "click",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.row:nth-child(9) .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[9]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e7592d6-d80e-4add-81fe-6d65008970f4",
+      "comment": "",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.row:nth-child(9) .form-control", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[9]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[9]/div/div/input", "xpath:position"]
+      ],
+      "value": "nguyennhan.it2412@gmail.com"
+    }, {
+      "id": "1394835e-f37a-45a0-b9c2-19f47ebb6504",
+      "comment": "",
+      "command": "click",
+      "target": "id=housenumber",
+      "targets": [
+        ["id=housenumber", "id"],
+        ["name=housenumber", "name"],
+        ["css=#housenumber", "css:finder"],
+        ["xpath=//input[@id='housenumber']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[14]/div/input", "xpath:idRelative"],
+        ["xpath=//div[14]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "89dc4fab-e53a-462f-b45b-443e3add936c",
+      "comment": "",
+      "command": "type",
+      "target": "id=housenumber",
+      "targets": [
+        ["id=housenumber", "id"],
+        ["name=housenumber", "name"],
+        ["css=#housenumber", "css:finder"],
+        ["xpath=//input[@id='housenumber']", "xpath:attributes"],
+        ["xpath=//form[@id='form-check']/section/div[14]/div/input", "xpath:idRelative"],
+        ["xpath=//div[14]/div/input", "xpath:position"]
+      ],
+      "value": "aaa"
+    }, {
+      "id": "da8ac1cb-8f84-4d24-8bdf-103312ddd4f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=submitForm",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eebb83b0-94e6-415e-b62a-d73f8df9965f",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.phonenumber",
+      "targets": [
+        ["css=.phonenumber", "css:finder"],
+        ["xpath=//form[@id='form-check']/section/div[8]/div/span", "xpath:idRelative"],
+        ["xpath=//div[8]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Số điện thoại hợp lệ phải có 10 số.')]", "xpath:innerText"]
+      ],
+      "value": "text"
+    }, {
+      "id": "01da14b9-2036-480b-9400-ffa385eb8215",
+      "comment": "",
+      "command": "if",
+      "target": "${text} === \"Số điện thoại hợp lệ phải có 10 số.\"",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0fb839d6-38ad-4593-95b0-33a7e0050581",
+      "comment": "",
+      "command": "echo",
+      "target": "Fail phone number ${value}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1351e34a-2945-4245-ad7b-300ca167fcd5",
+      "comment": "",
+      "command": "else",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "88d8d3d0-5c86-4a88-9095-ae83629652f6",
+      "comment": "",
+      "command": "echo",
+      "target": "Pass phone number ${value}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1c7a83c2-bf32-4c6d-bd1b-024db0422839",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc7d599f-a54a-44f1-89a0-fc875e39a765",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7711ab6c-8a1f-41a6-a7ac-be2ef6da6cd3",
+    "name": "times",
+    "commands": [{
+      "id": "fb08befc-273e-415c-935c-b24ef6ee405c",
+      "comment": "",
+      "command": "open",
+      "target": "https://staging.fpt.vn/shop",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c042010e-f0e9-42e4-899e-90b5c499dacc",
+      "comment": "",
+      "command": "storeTitle",
+      "target": "",
+      "targets": [],
+      "value": "value"
+    }, {
+      "id": "16f8a23d-7869-479f-8576-42946ea37b07",
+      "comment": "",
+      "command": "times",
+      "target": "5",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7af7176e-e9c4-4139-956f-2b24799f5196",
+      "comment": "",
+      "command": "echo",
+      "target": "${value}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1161bd1a-c2c8-42ea-98f8-0ab933b2a4c9",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "a454629e-758e-4822-b8c0-021e7112c10b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f06882ef-e7d7-4db4-8ac1-8936a0bb153f", "e89d609a-2df7-486e-80bc-c2bf0ba34476", "7711ab6c-8a1f-41a6-a7ac-be2ef6da6cd3"]
+  }],
+  "urls": ["https://staging.fpt.vn/", "https://staging.fpt.vn/shop"],
+  "plugins": []
+}

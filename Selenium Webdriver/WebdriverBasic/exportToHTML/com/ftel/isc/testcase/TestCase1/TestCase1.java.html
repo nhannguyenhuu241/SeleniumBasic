@@ -1,0 +1,219 @@
+<html>
+<head>
+<title>TestCase1.java</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cc7832;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #808080;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+TestCase1.java</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com.ftel.isc.testcase.TestCase1</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">com.ftel.isc.page.TestCase_Page</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.ftel.isc.by.ByTestCase_1</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.ftel.isc.utils.Utils</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">com.ftel.isc.utils.Language</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">org.junit.AfterClass</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.junit.BeforeClass</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.junit.Test</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.By</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.WebDriver</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">org.openqa.selenium.chrome.ChromeDriver</span><span class="s0">;</span>
+
+<span class="s0">import </span><span class="s1">javax.swing.*</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.io.FileInputStream</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.io.FileNotFoundException</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.io.IOException</span><span class="s0">;</span>
+<span class="s0">import </span><span class="s1">java.util.concurrent.TimeUnit</span><span class="s0">;</span>
+
+<span class="s0">public class </span><span class="s1">TestCase1 </span><span class="s0">extends </span><span class="s1">JFrame {</span>
+    <span class="s2">//private final JTextArea textArea;</span>
+    <span class="s2">// private final PrintStream standardOut;</span>
+    <span class="s0">private static </span><span class="s1">WebDriver driver</span><span class="s0">;</span>
+    <span class="s0">final int </span><span class="s1">TIME_OUT = </span><span class="s3">20</span><span class="s0">;</span>
+
+    <span class="s1">@BeforeClass</span>
+    <span class="s0">public static void </span><span class="s1">beforeClass() </span><span class="s0">throws </span><span class="s1">IOException {</span>
+        <span class="s2">//Create an object of ReadGuru99ExcelFile class</span>
+
+<span class="s2">//        Utils reaExels = new Utils();</span>
+<span class="s2">//</span>
+<span class="s2">//        //Prepare the path of excel file</span>
+<span class="s2">//</span>
+<span class="s2">//        String filePath = &quot;C:\\Users\\PC\\Desktop\\ToolTest\\src\\main\\java\\com\\ftel\\isc\\excelExportAndFileIO&quot;;</span>
+<span class="s2">//</span>
+<span class="s2">//        //Call read file method of the class to read data</span>
+<span class="s2">//</span>
+<span class="s2">//        reaExels.readExcel(filePath,&quot;ExportExcel.xls&quot;,&quot;Sheet1&quot;);</span>
+
+
+        <span class="s1">System.setProperty(</span><span class="s4">&quot;webdriver.chrome.driver&quot;</span><span class="s0">, </span><span class="s4">&quot;C:</span><span class="s0">\\</span><span class="s4">Users</span><span class="s0">\\</span><span class="s4">PC</span><span class="s0">\\</span><span class="s4">Desktop</span><span class="s0">\\</span><span class="s4">ToolTest</span><span class="s0">\\</span><span class="s4">src</span><span class="s0">\\</span><span class="s4">main</span><span class="s0">\\</span><span class="s4">java</span><span class="s0">\\</span><span class="s4">com</span><span class="s0">\\</span><span class="s4">ftel</span><span class="s0">\\</span><span class="s4">isc</span><span class="s0">\\</span><span class="s4">driver</span><span class="s0">\\</span><span class="s4">chromedriver.exe&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">driver = </span><span class="s0">new </span><span class="s1">ChromeDriver()</span><span class="s0">;</span>
+        <span class="s1">java.util.Set&lt;String&gt; handes = driver.getWindowHandles()</span><span class="s0">;</span>
+        <span class="s1">String winHanddel = driver.getWindowHandle()</span><span class="s0">;</span>
+        <span class="s1">handes.remove(winHanddel)</span><span class="s0">;</span>
+        <span class="s2">//System.setProperty(&quot;webdriver.gecko.driver&quot;, &quot;/Users/nhanne/Desktop/ToolTest/src/main/java/com/ftel/isc/geckodriver&quot;);</span>
+        <span class="s2">//driver = new FirefoxDriver();</span>
+        <span class="s1">driver.get(Language.BASE_URL)</span><span class="s0">;</span>
+        <span class="s1">driver.manage().window().maximize()</span><span class="s0">;</span>
+        <span class="s1">String actualTitle = driver.getTitle()</span><span class="s0">;</span>
+
+        <span class="s1">String expectedTitle = </span><span class="s4">&quot;FPT Telecom | Đăng Ký Online&quot;</span><span class="s0">;</span>
+        <span class="s0">if </span><span class="s1">(expectedTitle.contentEquals(actualTitle)) {</span>
+            <span class="s1">System.out.println(</span><span class="s4">&quot;Title Passed !&quot;</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">} </span><span class="s0">else </span><span class="s1">System.out.println(</span><span class="s4">&quot;Title Failed&quot;</span><span class="s1">)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+
+    <span class="s1">@Test</span>
+    <span class="s0">public void </span><span class="s1">actionTest() </span><span class="s0">throws </span><span class="s1">InterruptedException {</span>
+        <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">driver.findElement(By.xpath(</span><span class="s4">&quot;//*[@id=</span><span class="s0">\&quot;</span><span class="s4">box_internet</span><span class="s0">\&quot;</span><span class="s4">]/div[1]/div/div[1]/div/div[10]/button&quot;</span><span class="s1">)).click()</span><span class="s0">;</span>
+        <span class="s1">TestCase_Page page = </span><span class="s0">new </span><span class="s1">TestCase_Page(driver)</span><span class="s0">;</span>
+        <span class="s0">if </span><span class="s1">(Utils.waitForElementDisplay(driver</span><span class="s0">, </span><span class="s1">ByTestCase_1.byFullName</span><span class="s0">, </span><span class="s3">200</span><span class="s0">, </span><span class="s4">&quot;1&quot;</span><span class="s1">)) {</span>
+
+            <span class="s1">page.typeFullName(</span><span class="s4">&quot;Nguyễn Hửu Nhân&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">page.typePhoneNumber(</span><span class="s4">&quot;0869241224&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">page.typeEmail(</span><span class="s4">&quot;nguyennhan.it2412@gmail.com&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">page.typeDistrict()</span><span class="s0">;</span>
+            <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">page.typeByWardList()</span><span class="s0">;</span>
+            <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">page.typeTreet()</span><span class="s0">;</span>
+            <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">page.typeHouseNumber(</span><span class="s4">&quot;123&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">page.typeSubmitForm()</span><span class="s0">;</span>
+            <span class="s1">Thread.sleep(</span><span class="s3">6000</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">page.typeBirtDay(</span><span class="s4">&quot;26/10/1997&quot;</span><span class="s1">)</span><span class="s0">;</span>
+
+            <span class="s1">page.typePassport(</span><span class="s4">&quot;3418188634&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s2">// page.typeRadio6Month();</span>
+            <span class="s1">page.typePaymentCate()</span><span class="s0">;</span>
+            <span class="s1">page.typePayment()</span><span class="s0">;</span>
+            <span class="s1">Thread.sleep(</span><span class="s3">3000</span><span class="s1">)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+<span class="s2">//    public TestCase1() {</span>
+<span class="s2">//        textArea = new JTextArea(50, 10);</span>
+<span class="s2">//        textArea.setEditable(false);</span>
+<span class="s2">//        PrintStream printStream = new PrintStream(new CustomOutputStream(textArea));</span>
+<span class="s2">//</span>
+<span class="s2">//        // keeps reference of standard output stream</span>
+<span class="s2">//        standardOut = System.out;</span>
+<span class="s2">//</span>
+<span class="s2">//        // re-assigns standard output stream and error output stream</span>
+<span class="s2">//        System.setOut(printStream);</span>
+<span class="s2">//        System.setErr(printStream);</span>
+<span class="s2">//        setLayout(new GridBagLayout());</span>
+<span class="s2">//        GridBagConstraints constraints = new GridBagConstraints();</span>
+<span class="s2">//        constraints.gridx = 0;</span>
+<span class="s2">//        constraints.gridy = 0;</span>
+<span class="s2">//        constraints.insets = new Insets(10, 10, 10, 10);</span>
+<span class="s2">//        constraints.anchor = GridBagConstraints.WEST;</span>
+<span class="s2">//</span>
+<span class="s2">//        JButton buttonStart = new JButton(&quot;Start&quot;);</span>
+<span class="s2">//        add(buttonStart, constraints);</span>
+<span class="s2">//</span>
+<span class="s2">//        constraints.gridx = 1;</span>
+<span class="s2">//        JButton buttonClear = new JButton(&quot;Clear&quot;);</span>
+<span class="s2">//        add(buttonClear, constraints);</span>
+<span class="s2">//</span>
+<span class="s2">//        constraints.gridx = 0;</span>
+<span class="s2">//        constraints.gridy = 1;</span>
+<span class="s2">//        constraints.gridwidth = 2;</span>
+<span class="s2">//        constraints.fill = GridBagConstraints.BOTH;</span>
+<span class="s2">//        constraints.weightx = 1.0;</span>
+<span class="s2">//        constraints.weighty = 1.0;</span>
+<span class="s2">//</span>
+<span class="s2">//        add(new JScrollPane(textArea), constraints);</span>
+<span class="s2">//</span>
+<span class="s2">//        // adds event handler for button Start</span>
+<span class="s2">//        buttonStart.addActionListener(new ActionListener() {</span>
+<span class="s2">//            @Override</span>
+<span class="s2">//            public void actionPerformed(ActionEvent evt) {</span>
+<span class="s2">//            }</span>
+<span class="s2">//        });</span>
+<span class="s2">//        // adds event handler for button Clear</span>
+<span class="s2">//        buttonClear.addActionListener(new ActionListener() {</span>
+<span class="s2">//            @Override</span>
+<span class="s2">//            public void actionPerformed(ActionEvent evt) {</span>
+<span class="s2">//                // clears the text area</span>
+<span class="s2">//                try {</span>
+<span class="s2">//                    textArea.getDocument().remove(0,</span>
+<span class="s2">//                            textArea.getDocument().getLength());</span>
+<span class="s2">//                    standardOut.println(&quot;Text area cleared&quot;);</span>
+<span class="s2">//                } catch (BadLocationException ex) {</span>
+<span class="s2">//                    ex.printStackTrace();</span>
+<span class="s2">//                }</span>
+<span class="s2">//            }</span>
+<span class="s2">//        });</span>
+<span class="s2">//</span>
+<span class="s2">//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);</span>
+<span class="s2">//        setSize(480, 320);</span>
+<span class="s2">//        setLocationRelativeTo(null);</span>
+<span class="s2">//    }</span>
+
+    <span class="s0">private void </span><span class="s1">ByWard(TestCase_Page page) {</span>
+        <span class="s0">if </span><span class="s1">(Utils.waitForElementDisplay(driver</span><span class="s0">, </span><span class="s1">ByTestCase_1.byWardList</span><span class="s0">, </span><span class="s3">200</span><span class="s0">, </span><span class="s4">&quot;2&quot;</span><span class="s1">)) {</span>
+            <span class="s2">// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);</span>
+            <span class="s1">page.typeByWardList()</span><span class="s0">;</span>
+            <span class="s1">waitForTimeOut()</span><span class="s0">;</span>
+            <span class="s1">ByTreet(page)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">ByTreet(TestCase_Page page) {</span>
+        <span class="s0">if </span><span class="s1">(Utils.waitForElementDisplay(driver</span><span class="s0">, </span><span class="s1">ByTestCase_1.byTreet</span><span class="s0">, </span><span class="s3">200</span><span class="s0">, </span><span class="s4">&quot;3&quot;</span><span class="s1">)) {</span>
+            <span class="s2">// driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);</span>
+            <span class="s1">page.typeTreet()</span><span class="s0">;</span>
+            <span class="s1">page.typeHouseNumber(</span><span class="s4">&quot;123&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">page.typeSubmitForm()</span><span class="s0">;</span>
+            <span class="s1">waitForTimeOut()</span><span class="s0">;</span>
+            <span class="s1">ByBirtday(page)</span><span class="s0">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+    <span class="s0">private void </span><span class="s1">ByBirtday(TestCase_Page page) {</span>
+        <span class="s0">if </span><span class="s1">(Utils.waitForElementDisplay(driver</span><span class="s0">, </span><span class="s1">ByTestCase_1.byBirtDay</span><span class="s0">, </span><span class="s3">500</span><span class="s0">, </span><span class="s4">&quot;trang 3&quot;</span><span class="s1">)) {</span>
+
+            <span class="s1">page.typeBirtDay(</span><span class="s4">&quot;26/10/1997&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s1">page.typePassport(</span><span class="s4">&quot;3418188634&quot;</span><span class="s1">)</span><span class="s0">;</span>
+            <span class="s2">// page.typeRadio6Month();</span>
+            <span class="s1">page.typePaymentCate()</span><span class="s0">;</span>
+            <span class="s1">page.typePayment()</span><span class="s0">;</span>
+            <span class="s1">waitForTimeOut()</span><span class="s0">;</span>
+
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+
+
+    <span class="s0">public void </span><span class="s1">waitForTimeOut() {</span>
+        <span class="s1">driver.manage().timeouts().implicitlyWait(TIME_OUT</span><span class="s0">, </span><span class="s1">TimeUnit.SECONDS)</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+    <span class="s1">@AfterClass</span>
+    <span class="s0">public static void </span><span class="s1">afterClass() {</span>
+        <span class="s1">driver.quit()</span><span class="s0">;</span>
+    <span class="s1">}</span>
+
+<span class="s1">}</span>
+</pre>
+</body>
+</html>

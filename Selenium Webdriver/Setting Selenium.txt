@@ -1,0 +1,27 @@
+Setup for a Selenium Webdriver session
+
+- IntelliJ IDEA : https://www.jetbrains.com/idea/download/#section=windows -> Community dowload
+- JDK 1.8: https://download.oracle.com/otn/java/jdk/8u271-b09/61ae65e088624f5aaa0b1d2d801acb16/jdk-8u271-windows-x64.exe?AuthParam=1606465348_5e4ae7f36112582da99ebe637e2afaac
+- Chrome, Firefox brower
+- Java Basic: https://viettuts.vn/java
+- Driver : 
+	+ Chrome: https://sites.google.com/a/chromium.org/chromedriver/downloads
+	+ Firefox: https://github.com/mozilla/geckodriver/releases/tag/v0.28.0
+- Library Selenium:
+
+<----------------------------------------------------------->
+	<dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-server</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8.17</version>
+        </dependency>
+    </dependencies>
+
+<----------------------------------------------------------->
